@@ -102,7 +102,7 @@
             "Type": "DirectOutput",
             "AudioOutputDetails": [
               {
-                "type": "AnalogAudio1",
+                "type": "Input1",
                 "description": "Output 1",
                 "connector": "Analog",
                 "friendlyName": "Output 1"
@@ -157,7 +157,7 @@
             "Type": "DirectOutput",
             "AudioOutputDetails": [
               {
-                "type": "AnalogAudio2",
+                "type": "Input2",
                 "description": "Output 2",
                 "connector": "Analog",
                 "friendlyName": "Output 2"
@@ -212,7 +212,7 @@
             "Type": "DirectOutput",
             "AudioOutputDetails": [
               {
-                "type": "AnalogAudio3",
+                "type": "Input3",
                 "description": "Output 3",
                 "connector": "Analog",
                 "friendlyName": "Output 3"
@@ -267,7 +267,7 @@
             "Type": "DirectOutput",
             "AudioOutputDetails": [
               {
-                "type": "AnalogAudio4",
+                "type": "Input4",
                 "description": "Output 4",
                 "connector": "Analog",
                 "friendlyName": "Output 4"
@@ -322,7 +322,7 @@
             "Type": "DirectOutput",
             "AudioOutputDetails": [
               {
-                "type": "AnalogAudio5",
+                "type": "Input5",
                 "description": "Output 5",
                 "connector": "Analog",
                 "friendlyName": "Output 5"
@@ -377,7 +377,7 @@
             "Type": "DirectOutput",
             "AudioOutputDetails": [
               {
-                "type": "AnalogAudio6",
+                "type": "Input6",
                 "description": "Output 6",
                 "connector": "Analog",
                 "friendlyName": "Output 6"
@@ -432,7 +432,7 @@
             "Type": "DirectOutput",
             "AudioOutputDetails": [
               {
-                "type": "AnalogAudio7",
+                "type": "Input7",
                 "description": "Output 7",
                 "connector": "Analog",
                 "friendlyName": "Output 7"
@@ -487,7 +487,7 @@
             "Type": "DirectOutput",
             "AudioOutputDetails": [
               {
-                "type": "AnalogAudio8",
+                "type": "Input8",
                 "description": "Output 8",
                 "connector": "Analog",
                 "friendlyName": "Output 8"
@@ -542,7 +542,7 @@
             "Type": "DirectOutput",
             "AudioOutputDetails": [
               {
-                "type": "AnalogAudio9",
+                "type": "Input9",
                 "description": "Output 9",
                 "connector": "Analog",
                 "friendlyName": "Output 9"
@@ -597,7 +597,7 @@
             "Type": "DirectOutput",
             "AudioOutputDetails": [
               {
-                "type": "AnalogAudio10",
+                "type": "Input10",
                 "description": "Output 10",
                 "connector": "Analog",
                 "friendlyName": "Output 10"
@@ -652,7 +652,7 @@
             "Type": "DirectOutput",
             "AudioOutputDetails": [
               {
-                "type": "AnalogAudio11",
+                "type": "Input11",
                 "description": "Output 11",
                 "connector": "Analog",
                 "friendlyName": "Output 11"
@@ -707,7 +707,7 @@
             "Type": "DirectOutput",
             "AudioOutputDetails": [
               {
-                "type": "AnalogAudio12",
+                "type": "Input12",
                 "description": "Output 12",
                 "connector": "Analog",
                 "friendlyName": "Output 12"
@@ -762,7 +762,7 @@
             "Type": "DirectOutput",
             "AudioOutputDetails": [
               {
-                "type": "AnalogAudio13",
+                "type": "Input13",
                 "description": "Output 13",
                 "connector": "Analog",
                 "friendlyName": "Output 13"
@@ -817,7 +817,7 @@
             "Type": "DirectOutput",
             "AudioOutputDetails": [
               {
-                "type": "AnalogAudio14",
+                "type": "Input14",
                 "description": "Output 14",
                 "connector": "Analog",
                 "friendlyName": "Output 14"
@@ -872,7 +872,7 @@
             "Type": "DirectOutput",
             "AudioOutputDetails": [
               {
-                "type": "AnalogAudio15",
+                "type": "Input15",
                 "description": "Output 15",
                 "connector": "Analog",
                 "friendlyName": "Output 15"
@@ -927,7 +927,7 @@
             "Type": "DirectOutput",
             "AudioOutputDetails": [
               {
-                "type": "AnalogAudio16",
+                "type": "Input16",
                 "description": "Output 16",
                 "connector": "Analog",
                 "friendlyName": "Output 16"
@@ -984,7 +984,7 @@
             "Type": "DirectInput",
             "AudioInputDetails": [
               {
-                "type": "AnalogAudio1",
+                "type": "Input1",
                 "description": "Input 1 Audio Input",
                 "connector": "Analog",
                 "friendlyName": "Input 1"
@@ -1000,7 +1000,7 @@
             "Type": "DirectInput",
             "AudioInputDetails": [
               {
-                "type": "AnalogAudio2",
+                "type": "Input2",
                 "description": "Input 2 Audio Input",
                 "connector": "Analog",
                 "friendlyName": "Input 2"
@@ -1016,7 +1016,7 @@
             "Type": "DirectInput",
             "AudioInputDetails": [
               {
-                "type": "AnalogAudio3",
+                "type": "Input3",
                 "description": "Input 3 Audio Input",
                 "connector": "Analog",
                 "friendlyName": "Input 3"
@@ -1032,7 +1032,7 @@
             "Type": "DirectInput",
             "AudioInputDetails": [
               {
-                "type": "AnalogAudio4",
+                "type": "Input4",
                 "description": "Input 4 Audio Input",
                 "connector": "Analog",
                 "friendlyName": "Input 4"
@@ -1048,7 +1048,7 @@
             "Type": "DirectInput",
             "AudioInputDetails": [
               {
-                "type": "AnalogAudio5",
+                "type": "Input5",
                 "description": "Input 5 Audio Input",
                 "connector": "Analog",
                 "friendlyName": "Input 5"
@@ -1064,7 +1064,7 @@
             "Type": "DirectInput",
             "AudioInputDetails": [
               {
-                "type": "AnalogAudio6",
+                "type": "Input6",
                 "description": "Input 6 Audio Input",
                 "connector": "Analog",
                 "friendlyName": "Input 6"
@@ -1080,7 +1080,7 @@
             "Type": "DirectInput",
             "AudioInputDetails": [
               {
-                "type": "AnalogAudio7",
+                "type": "Input7",
                 "description": "Input 7 Audio Input",
                 "connector": "Analog",
                 "friendlyName": "Input 7"
@@ -1096,7 +1096,7 @@
             "Type": "DirectInput",
             "AudioInputDetails": [
               {
-                "type": "AnalogAudio8",
+                "type": "Input8",
                 "description": "Input 8 Audio Input",
                 "connector": "Analog",
                 "friendlyName": "Input 8"
@@ -1112,7 +1112,7 @@
             "Type": "DirectInput",
             "AudioInputDetails": [
               {
-                "type": "AnalogAudio9",
+                "type": "Input9",
                 "description": "Input 9 Audio Input",
                 "connector": "Analog",
                 "friendlyName": "Input 9"
@@ -1128,7 +1128,7 @@
             "Type": "DirectInput",
             "AudioInputDetails": [
               {
-                "type": "AnalogAudio10",
+                "type": "Input10",
                 "description": "Input 10 Audio Input",
                 "connector": "Analog",
                 "friendlyName": "Input 10"
@@ -1144,7 +1144,7 @@
             "Type": "DirectInput",
             "AudioInputDetails": [
               {
-                "type": "AnalogAudio11",
+                "type": "Input11",
                 "description": "Input 11 Audio Input",
                 "connector": "Analog",
                 "friendlyName": "Input 11"
@@ -1160,7 +1160,7 @@
             "Type": "DirectInput",
             "AudioInputDetails": [
               {
-                "type": "AnalogAudio12",
+                "type": "Input12",
                 "description": "Input 12 Audio Input",
                 "connector": "Analog",
                 "friendlyName": "Input 12"
@@ -1176,7 +1176,7 @@
             "Type": "DirectInput",
             "AudioInputDetails": [
               {
-                "type": "AnalogAudio13",
+                "type": "Input13",
                 "description": "Input 13 Audio Input",
                 "connector": "Analog",
                 "friendlyName": "Input 13"
@@ -1192,7 +1192,7 @@
             "Type": "DirectInput",
             "AudioInputDetails": [
               {
-                "type": "AnalogAudio14",
+                "type": "Input14",
                 "description": "Input 14 Audio Input",
                 "connector": "Analog",
                 "friendlyName": "Input 14"
@@ -1208,7 +1208,7 @@
             "Type": "DirectInput",
             "AudioInputDetails": [
               {
-                "type": "AnalogAudio15",
+                "type": "Input15",
                 "description": "Input 15 Audio Input",
                 "connector": "Analog",
                 "friendlyName": "Input 15"
@@ -1224,7 +1224,7 @@
             "Type": "DirectInput",
             "AudioInputDetails": [
               {
-                "type": "AnalogAudio16",
+                "type": "Input16",
                 "description": "Input 16 Audio Input",
                 "connector": "Analog",
                 "friendlyName": "Input 16"
