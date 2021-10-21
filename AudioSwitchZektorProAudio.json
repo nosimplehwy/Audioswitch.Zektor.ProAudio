@@ -55,7 +55,7 @@
         "EnableAutoPolling": false,
         "EnableAutoReconnect": true,
         "TimeBetweenCommands": 250,
-        "TimeBetweenCommandsOverride": 0,
+        "TimeBetweenCommandsOverride": 100,
         "ResponseTimeout": 3000,
         "WaitForResponse": true,
         "IpProtocol": 0,
@@ -72,10 +72,6 @@
         "AudioVideoSwitcherRoute": {
           "Command": "^SZ @{output},{input}$"
         }
-      },
-      "Feedback": {
-        "Header": "^",
-        "ApiDelimiter": "$"
       },
       "PowerWaitPeriod": {
         "UseLocalWarmupTimer": false,
@@ -141,10 +137,10 @@
                   "On": "1",
                   "Off": "0"
                 },
-                "GroupHeader": "^=MZ @1,"
+                "GroupHeader": "^=MZ @001,"
               },
               "VolumeFeedback": {
-                "GroupHeader": "^=VPZ @1,"
+                "GroupHeader": "^=VPZ @001,"
               }
             }
           },
@@ -196,10 +192,10 @@
                   "On": "1",
                   "Off": "0"
                 },
-                "GroupHeader": "^=MZ @2,"
+                "GroupHeader": "^=MZ @002,"
               },
               "VolumeFeedback": {
-                "GroupHeader": "^=VPZ @2,"
+                "GroupHeader": "^=VPZ @002,"
               }
             }
           },
@@ -251,10 +247,10 @@
                   "On": "1",
                   "Off": "0"
                 },
-                "GroupHeader": "^=MZ @3,"
+                "GroupHeader": "^=MZ @003,"
               },
               "VolumeFeedback": {
-                "GroupHeader": "^=VPZ @3,"
+                "GroupHeader": "^=VPZ @003,"
               }
             }
           },
@@ -306,10 +302,10 @@
                   "On": "1",
                   "Off": "0"
                 },
-                "GroupHeader": "^=MZ @4,"
+                "GroupHeader": "^=MZ @004,"
               },
               "VolumeFeedback": {
-                "GroupHeader": "^=VPZ @4,"
+                "GroupHeader": "^=VPZ @004,"
               }
             }
           },
@@ -361,10 +357,10 @@
                   "On": "1",
                   "Off": "0"
                 },
-                "GroupHeader": "^=MZ @5,"
+                "GroupHeader": "^=MZ @005,"
               },
               "VolumeFeedback": {
-                "GroupHeader": "^=VPZ @5,"
+                "GroupHeader": "^=VPZ @005,"
               }
             }
           },
@@ -416,10 +412,10 @@
                   "On": "1",
                   "Off": "0"
                 },
-                "GroupHeader": "^=MZ @6,"
+                "GroupHeader": "^=MZ @006,"
               },
               "VolumeFeedback": {
-                "GroupHeader": "^=VPZ @6,"
+                "GroupHeader": "^=VPZ @006,"
               }
             }
           },
@@ -471,10 +467,10 @@
                   "On": "1",
                   "Off": "0"
                 },
-                "GroupHeader": "^=MZ @7,"
+                "GroupHeader": "^=MZ @007,"
               },
               "VolumeFeedback": {
-                "GroupHeader": "^=VPZ @7,"
+                "GroupHeader": "^=VPZ @007,"
               }
             }
           },
@@ -526,10 +522,10 @@
                   "On": "1",
                   "Off": "0"
                 },
-                "GroupHeader": "^=MZ @8,"
+                "GroupHeader": "^=MZ @008,"
               },
               "VolumeFeedback": {
-                "GroupHeader": "^=VPZ @8,"
+                "GroupHeader": "^=VPZ @008,"
               }
             }
           },
@@ -581,10 +577,10 @@
                   "On": "1",
                   "Off": "0"
                 },
-                "GroupHeader": "^=MZ @9,"
+                "GroupHeader": "^=MZ @009,"
               },
               "VolumeFeedback": {
-                "GroupHeader": "^=VPZ @9,"
+                "GroupHeader": "^=VPZ @009,"
               }
             }
           },
@@ -636,10 +632,10 @@
                   "On": "1",
                   "Off": "0"
                 },
-                "GroupHeader": "^=MZ @10,"
+                "GroupHeader": "^=MZ @010,"
               },
               "VolumeFeedback": {
-                "GroupHeader": "^=VPZ @10,"
+                "GroupHeader": "^=VPZ @010,"
               }
             }
           },
@@ -691,10 +687,10 @@
                   "On": "1",
                   "Off": "0"
                 },
-                "GroupHeader": "^=MZ @11,"
+                "GroupHeader": "^=MZ @011,"
               },
               "VolumeFeedback": {
-                "GroupHeader": "^=VPZ @11,"
+                "GroupHeader": "^=VPZ @011,"
               }
             }
           },
@@ -746,10 +742,10 @@
                   "On": "1",
                   "Off": "0"
                 },
-                "GroupHeader": "^=MZ @12,"
+                "GroupHeader": "^=MZ @012,"
               },
               "VolumeFeedback": {
-                "GroupHeader": "^=VPZ @12,"
+                "GroupHeader": "^=VPZ @012,"
               }
             }
           },
@@ -801,10 +797,10 @@
                   "On": "1",
                   "Off": "0"
                 },
-                "GroupHeader": "^=MZ @13,"
+                "GroupHeader": "^=MZ @013,"
               },
               "VolumeFeedback": {
-                "GroupHeader": "^=VPZ @13,"
+                "GroupHeader": "^=VPZ @013,"
               }
             }
           },
@@ -856,10 +852,10 @@
                   "On": "1",
                   "Off": "0"
                 },
-                "GroupHeader": "^=MZ @14,"
+                "GroupHeader": "^=MZ @014,"
               },
               "VolumeFeedback": {
-                "GroupHeader": "^=VPZ @14,"
+                "GroupHeader": "^=VPZ @014,"
               }
             }
           },
@@ -911,10 +907,10 @@
                   "On": "1",
                   "Off": "0"
                 },
-                "GroupHeader": "^=MZ @15,"
+                "GroupHeader": "^=MZ @015,"
               },
               "VolumeFeedback": {
-                "GroupHeader": "^=VPZ @15,"
+                "GroupHeader": "^=VPZ @015,"
               }
             }
           },
@@ -966,10 +962,10 @@
                   "On": "1",
                   "Off": "0"
                 },
-                "GroupHeader": "^=MZ @16,"
+                "GroupHeader": "^=MZ @016,"
               },
               "VolumeFeedback": {
-                "GroupHeader": "^=VPZ @16,"
+                "GroupHeader": "^=VPZ @016,"
               }
             }
           },
@@ -1021,10 +1017,10 @@
                   "On": "1",
                   "Off": "0"
                 },
-                "GroupHeader": "^=MZ @17,"
+                "GroupHeader": "^=MZ @017,"
               },
               "VolumeFeedback": {
-                "GroupHeader": "^=VPZ @17,"
+                "GroupHeader": "^=VPZ @017,"
               }
             }
           },
@@ -1076,10 +1072,780 @@
                   "On": "1",
                   "Off": "0"
                 },
-                "GroupHeader": "^=MZ @18,"
+                "GroupHeader": "^=MZ @018,"
               },
               "VolumeFeedback": {
-                "GroupHeader": "^=VPZ @18,"
+                "GroupHeader": "^=VPZ @018,"
+              }
+            }
+          },
+          {
+            "Id": "output19",
+            "ApiIdentifier": "19",
+            "Name": "Output 19",
+            "Manufacturer": "Zektor",
+            "Model": null,
+            "Type": "DirectOutput",
+            "AudioOutputDetails": [
+              {
+                "type": "Input19",
+                "description": "Output 19",
+                "connector": "Analog",
+                "friendlyName": "Output 19"
+              }
+            ],
+            "DeviceSupport": {
+              "SupportsVolumePercentFeedback": true,
+              "SupportsMuteFeedback": true,
+              "SupportsDiscreteMute": true,
+              "SupportsMute": false,
+              "SupportsSetVolume": true,
+              "SupportsChangeVolume": true
+            },
+            "StandardCommands": {
+              "MuteOn": {
+                "Command": "^MZ @19,1$"
+              },
+              "MuteOff": {
+                "Command": "^MZ @19,0$"
+              },
+              "MutePoll": {
+                "Command": "^VMZ @19?$"
+              },
+              "Vol": {
+                "Command": "^VPZ @19,{value}$"
+              },
+              "VolumePoll": {
+                "Command": "^VPZ @19?$"
+              }
+            },
+            "Feedback": {
+              "Header": "^",
+              "ApiDelimiter": "$",
+              "MuteFeedback": {
+                "Feedback": {
+                  "On": "1",
+                  "Off": "0"
+                },
+                "GroupHeader": "^=MZ @019,"
+              },
+              "VolumeFeedback": {
+                "GroupHeader": "^=VPZ @019,"
+              }
+            }
+          },
+          {
+            "Id": "output20",
+            "ApiIdentifier": "20",
+            "Name": "Output 20",
+            "Manufacturer": "Zektor",
+            "Model": null,
+            "Type": "DirectOutput",
+            "AudioOutputDetails": [
+              {
+                "type": "Input20",
+                "description": "Output 20",
+                "connector": "Analog",
+                "friendlyName": "Output 20"
+              }
+            ],
+            "DeviceSupport": {
+              "SupportsVolumePercentFeedback": true,
+              "SupportsMuteFeedback": true,
+              "SupportsDiscreteMute": true,
+              "SupportsMute": false,
+              "SupportsSetVolume": true,
+              "SupportsChangeVolume": true
+            },
+            "StandardCommands": {
+              "MuteOn": {
+                "Command": "^MZ @20,1$"
+              },
+              "MuteOff": {
+                "Command": "^MZ @20,0$"
+              },
+              "MutePoll": {
+                "Command": "^VMZ @20?$"
+              },
+              "Vol": {
+                "Command": "^VPZ @20,{value}$"
+              },
+              "VolumePoll": {
+                "Command": "^VPZ @20?$"
+              }
+            },
+            "Feedback": {
+              "Header": "^",
+              "ApiDelimiter": "$",
+              "MuteFeedback": {
+                "Feedback": {
+                  "On": "1",
+                  "Off": "0"
+                },
+                "GroupHeader": "^=MZ @020,"
+              },
+              "VolumeFeedback": {
+                "GroupHeader": "^=VPZ @020,"
+              }
+            }
+          },
+          {
+            "Id": "output21",
+            "ApiIdentifier": "21",
+            "Name": "Output 21",
+            "Manufacturer": "Zektor",
+            "Model": null,
+            "Type": "DirectOutput",
+            "AudioOutputDetails": [
+              {
+                "type": "Input17",
+                "description": "Output 21",
+                "connector": "Analog",
+                "friendlyName": "Output 21"
+              }
+            ],
+            "DeviceSupport": {
+              "SupportsVolumePercentFeedback": true,
+              "SupportsMuteFeedback": true,
+              "SupportsDiscreteMute": true,
+              "SupportsMute": false,
+              "SupportsSetVolume": true,
+              "SupportsChangeVolume": true
+            },
+            "StandardCommands": {
+              "MuteOn": {
+                "Command": "^MZ @21,1$"
+              },
+              "MuteOff": {
+                "Command": "^MZ @21,0$"
+              },
+              "MutePoll": {
+                "Command": "^VMZ @21?$"
+              },
+              "Vol": {
+                "Command": "^VPZ @21,{value}$"
+              },
+              "VolumePoll": {
+                "Command": "^VPZ @21?$"
+              }
+            },
+            "Feedback": {
+              "Header": "^",
+              "ApiDelimiter": "$",
+              "MuteFeedback": {
+                "Feedback": {
+                  "On": "1",
+                  "Off": "0"
+                },
+                "GroupHeader": "^=MZ @021,"
+              },
+              "VolumeFeedback": {
+                "GroupHeader": "^=VPZ @021,"
+              }
+            }
+          },
+          {
+            "Id": "output22",
+            "ApiIdentifier": "22",
+            "Name": "Output 22",
+            "Manufacturer": "Zektor",
+            "Model": null,
+            "Type": "DirectOutput",
+            "AudioOutputDetails": [
+              {
+                "type": "Input22",
+                "description": "Output 22",
+                "connector": "Analog",
+                "friendlyName": "Output 22"
+              }
+            ],
+            "DeviceSupport": {
+              "SupportsVolumePercentFeedback": true,
+              "SupportsMuteFeedback": true,
+              "SupportsDiscreteMute": true,
+              "SupportsMute": false,
+              "SupportsSetVolume": true,
+              "SupportsChangeVolume": true
+            },
+            "StandardCommands": {
+              "MuteOn": {
+                "Command": "^MZ @22,1$"
+              },
+              "MuteOff": {
+                "Command": "^MZ @22,0$"
+              },
+              "MutePoll": {
+                "Command": "^VMZ @22?$"
+              },
+              "Vol": {
+                "Command": "^VPZ @22,{value}$"
+              },
+              "VolumePoll": {
+                "Command": "^VPZ @22?$"
+              }
+            },
+            "Feedback": {
+              "Header": "^",
+              "ApiDelimiter": "$",
+              "MuteFeedback": {
+                "Feedback": {
+                  "On": "1",
+                  "Off": "0"
+                },
+                "GroupHeader": "^=MZ @022,"
+              },
+              "VolumeFeedback": {
+                "GroupHeader": "^=VPZ @022,"
+              }
+            }
+          },
+          {
+            "Id": "output23",
+            "ApiIdentifier": "23",
+            "Name": "Output 23",
+            "Manufacturer": "Zektor",
+            "Model": null,
+            "Type": "DirectOutput",
+            "AudioOutputDetails": [
+              {
+                "type": "Input23",
+                "description": "Output 23",
+                "connector": "Analog",
+                "friendlyName": "Output 23"
+              }
+            ],
+            "DeviceSupport": {
+              "SupportsVolumePercentFeedback": true,
+              "SupportsMuteFeedback": true,
+              "SupportsDiscreteMute": true,
+              "SupportsMute": false,
+              "SupportsSetVolume": true,
+              "SupportsChangeVolume": true
+            },
+            "StandardCommands": {
+              "MuteOn": {
+                "Command": "^MZ @23,1$"
+              },
+              "MuteOff": {
+                "Command": "^MZ @23,0$"
+              },
+              "MutePoll": {
+                "Command": "^VMZ @23?$"
+              },
+              "Vol": {
+                "Command": "^VPZ @23,{value}$"
+              },
+              "VolumePoll": {
+                "Command": "^VPZ @23?$"
+              }
+            },
+            "Feedback": {
+              "Header": "^",
+              "ApiDelimiter": "$",
+              "MuteFeedback": {
+                "Feedback": {
+                  "On": "1",
+                  "Off": "0"
+                },
+                "GroupHeader": "^=MZ @023,"
+              },
+              "VolumeFeedback": {
+                "GroupHeader": "^=VPZ @023,"
+              }
+            }
+          },
+          {
+            "Id": "output24",
+            "ApiIdentifier": "24",
+            "Name": "Output 24",
+            "Manufacturer": "Zektor",
+            "Model": null,
+            "Type": "DirectOutput",
+            "AudioOutputDetails": [
+              {
+                "type": "Input24",
+                "description": "Output 24",
+                "connector": "Analog",
+                "friendlyName": "Output 24"
+              }
+            ],
+            "DeviceSupport": {
+              "SupportsVolumePercentFeedback": true,
+              "SupportsMuteFeedback": true,
+              "SupportsDiscreteMute": true,
+              "SupportsMute": false,
+              "SupportsSetVolume": true,
+              "SupportsChangeVolume": true
+            },
+            "StandardCommands": {
+              "MuteOn": {
+                "Command": "^MZ @24,1$"
+              },
+              "MuteOff": {
+                "Command": "^MZ @24,0$"
+              },
+              "MutePoll": {
+                "Command": "^VMZ @24?$"
+              },
+              "Vol": {
+                "Command": "^VPZ @24,{value}$"
+              },
+              "VolumePoll": {
+                "Command": "^VPZ @24?$"
+              }
+            },
+            "Feedback": {
+              "Header": "^",
+              "ApiDelimiter": "$",
+              "MuteFeedback": {
+                "Feedback": {
+                  "On": "1",
+                  "Off": "0"
+                },
+                "GroupHeader": "^=MZ @024,"
+              },
+              "VolumeFeedback": {
+                "GroupHeader": "^=VPZ @024,"
+              }
+            }
+          },
+          {
+            "Id": "output25",
+            "ApiIdentifier": "25",
+            "Name": "Output 25",
+            "Manufacturer": "Zektor",
+            "Model": null,
+            "Type": "DirectOutput",
+            "AudioOutputDetails": [
+              {
+                "type": "Input25",
+                "description": "Output 25",
+                "connector": "Analog",
+                "friendlyName": "Output 25"
+              }
+            ],
+            "DeviceSupport": {
+              "SupportsVolumePercentFeedback": true,
+              "SupportsMuteFeedback": true,
+              "SupportsDiscreteMute": true,
+              "SupportsMute": false,
+              "SupportsSetVolume": true,
+              "SupportsChangeVolume": true
+            },
+            "StandardCommands": {
+              "MuteOn": {
+                "Command": "^MZ @25,1$"
+              },
+              "MuteOff": {
+                "Command": "^MZ @25,0$"
+              },
+              "MutePoll": {
+                "Command": "^VMZ @25?$"
+              },
+              "Vol": {
+                "Command": "^VPZ @25,{value}$"
+              },
+              "VolumePoll": {
+                "Command": "^VPZ @25?$"
+              }
+            },
+            "Feedback": {
+              "Header": "^",
+              "ApiDelimiter": "$",
+              "MuteFeedback": {
+                "Feedback": {
+                  "On": "1",
+                  "Off": "0"
+                },
+                "GroupHeader": "^=MZ @025,"
+              },
+              "VolumeFeedback": {
+                "GroupHeader": "^=VPZ @025,"
+              }
+            }
+          },
+          {
+            "Id": "output26",
+            "ApiIdentifier": "26",
+            "Name": "Output 26",
+            "Manufacturer": "Zektor",
+            "Model": null,
+            "Type": "DirectOutput",
+            "AudioOutputDetails": [
+              {
+                "type": "Input26",
+                "description": "Output 26",
+                "connector": "Analog",
+                "friendlyName": "Output 26"
+              }
+            ],
+            "DeviceSupport": {
+              "SupportsVolumePercentFeedback": true,
+              "SupportsMuteFeedback": true,
+              "SupportsDiscreteMute": true,
+              "SupportsMute": false,
+              "SupportsSetVolume": true,
+              "SupportsChangeVolume": true
+            },
+            "StandardCommands": {
+              "MuteOn": {
+                "Command": "^MZ @26,1$"
+              },
+              "MuteOff": {
+                "Command": "^MZ @26,0$"
+              },
+              "MutePoll": {
+                "Command": "^VMZ @26?$"
+              },
+              "Vol": {
+                "Command": "^VPZ @26,{value}$"
+              },
+              "VolumePoll": {
+                "Command": "^VPZ @26?$"
+              }
+            },
+            "Feedback": {
+              "Header": "^",
+              "ApiDelimiter": "$",
+              "MuteFeedback": {
+                "Feedback": {
+                  "On": "1",
+                  "Off": "0"
+                },
+                "GroupHeader": "^=MZ @026,"
+              },
+              "VolumeFeedback": {
+                "GroupHeader": "^=VPZ @026,"
+              }
+            }
+          },
+          {
+            "Id": "output27",
+            "ApiIdentifier": "27",
+            "Name": "Output 27",
+            "Manufacturer": "Zektor",
+            "Model": null,
+            "Type": "DirectOutput",
+            "AudioOutputDetails": [
+              {
+                "type": "Input27",
+                "description": "Output 27",
+                "connector": "Analog",
+                "friendlyName": "Output 27"
+              }
+            ],
+            "DeviceSupport": {
+              "SupportsVolumePercentFeedback": true,
+              "SupportsMuteFeedback": true,
+              "SupportsDiscreteMute": true,
+              "SupportsMute": false,
+              "SupportsSetVolume": true,
+              "SupportsChangeVolume": true
+            },
+            "StandardCommands": {
+              "MuteOn": {
+                "Command": "^MZ @27,1$"
+              },
+              "MuteOff": {
+                "Command": "^MZ @27,0$"
+              },
+              "MutePoll": {
+                "Command": "^VMZ @27?$"
+              },
+              "Vol": {
+                "Command": "^VPZ @27,{value}$"
+              },
+              "VolumePoll": {
+                "Command": "^VPZ @27?$"
+              }
+            },
+            "Feedback": {
+              "Header": "^",
+              "ApiDelimiter": "$",
+              "MuteFeedback": {
+                "Feedback": {
+                  "On": "1",
+                  "Off": "0"
+                },
+                "GroupHeader": "^=MZ @027,"
+              },
+              "VolumeFeedback": {
+                "GroupHeader": "^=VPZ @027,"
+              }
+            }
+          },
+          {
+            "Id": "output28",
+            "ApiIdentifier": "28",
+            "Name": "Output 28",
+            "Manufacturer": "Zektor",
+            "Model": null,
+            "Type": "DirectOutput",
+            "AudioOutputDetails": [
+              {
+                "type": "Input28",
+                "description": "Output 28",
+                "connector": "Analog",
+                "friendlyName": "Output 28"
+              }
+            ],
+            "DeviceSupport": {
+              "SupportsVolumePercentFeedback": true,
+              "SupportsMuteFeedback": true,
+              "SupportsDiscreteMute": true,
+              "SupportsMute": false,
+              "SupportsSetVolume": true,
+              "SupportsChangeVolume": true
+            },
+            "StandardCommands": {
+              "MuteOn": {
+                "Command": "^MZ @28,1$"
+              },
+              "MuteOff": {
+                "Command": "^MZ @28,0$"
+              },
+              "MutePoll": {
+                "Command": "^VMZ @28?$"
+              },
+              "Vol": {
+                "Command": "^VPZ @28,{value}$"
+              },
+              "VolumePoll": {
+                "Command": "^VPZ @28?$"
+              }
+            },
+            "Feedback": {
+              "Header": "^",
+              "ApiDelimiter": "$",
+              "MuteFeedback": {
+                "Feedback": {
+                  "On": "1",
+                  "Off": "0"
+                },
+                "GroupHeader": "^=MZ @028,"
+              },
+              "VolumeFeedback": {
+                "GroupHeader": "^=VPZ @028,"
+              }
+            }
+          },
+          {
+            "Id": "output29",
+            "ApiIdentifier": "29",
+            "Name": "Output 29",
+            "Manufacturer": "Zektor",
+            "Model": null,
+            "Type": "DirectOutput",
+            "AudioOutputDetails": [
+              {
+                "type": "Input29",
+                "description": "Output 29",
+                "connector": "Analog",
+                "friendlyName": "Output 29"
+              }
+            ],
+            "DeviceSupport": {
+              "SupportsVolumePercentFeedback": true,
+              "SupportsMuteFeedback": true,
+              "SupportsDiscreteMute": true,
+              "SupportsMute": false,
+              "SupportsSetVolume": true,
+              "SupportsChangeVolume": true
+            },
+            "StandardCommands": {
+              "MuteOn": {
+                "Command": "^MZ @29,1$"
+              },
+              "MuteOff": {
+                "Command": "^MZ @29,0$"
+              },
+              "MutePoll": {
+                "Command": "^VMZ @29?$"
+              },
+              "Vol": {
+                "Command": "^VPZ @29,{value}$"
+              },
+              "VolumePoll": {
+                "Command": "^VPZ @29?$"
+              }
+            },
+            "Feedback": {
+              "Header": "^",
+              "ApiDelimiter": "$",
+              "MuteFeedback": {
+                "Feedback": {
+                  "On": "1",
+                  "Off": "0"
+                },
+                "GroupHeader": "^=MZ @029,"
+              },
+              "VolumeFeedback": {
+                "GroupHeader": "^=VPZ @029,"
+              }
+            }
+          },
+          {
+            "Id": "output30",
+            "ApiIdentifier": "30",
+            "Name": "Output 30",
+            "Manufacturer": "Zektor",
+            "Model": null,
+            "Type": "DirectOutput",
+            "AudioOutputDetails": [
+              {
+                "type": "Input30",
+                "description": "Output 30",
+                "connector": "Analog",
+                "friendlyName": "Output 30"
+              }
+            ],
+            "DeviceSupport": {
+              "SupportsVolumePercentFeedback": true,
+              "SupportsMuteFeedback": true,
+              "SupportsDiscreteMute": true,
+              "SupportsMute": false,
+              "SupportsSetVolume": true,
+              "SupportsChangeVolume": true
+            },
+            "StandardCommands": {
+              "MuteOn": {
+                "Command": "^MZ @30,1$"
+              },
+              "MuteOff": {
+                "Command": "^MZ @30,0$"
+              },
+              "MutePoll": {
+                "Command": "^VMZ @30?$"
+              },
+              "Vol": {
+                "Command": "^VPZ @30,{value}$"
+              },
+              "VolumePoll": {
+                "Command": "^VPZ @30?$"
+              }
+            },
+            "Feedback": {
+              "Header": "^",
+              "ApiDelimiter": "$",
+              "MuteFeedback": {
+                "Feedback": {
+                  "On": "1",
+                  "Off": "0"
+                },
+                "GroupHeader": "^=MZ @030,"
+              },
+              "VolumeFeedback": {
+                "GroupHeader": "^=VPZ @030,"
+              }
+            }
+          },
+          {
+            "Id": "output31",
+            "ApiIdentifier": "31",
+            "Name": "Output 31",
+            "Manufacturer": "Zektor",
+            "Model": null,
+            "Type": "DirectOutput",
+            "AudioOutputDetails": [
+              {
+                "type": "Input31",
+                "description": "Output 31",
+                "connector": "Analog",
+                "friendlyName": "Output 31"
+              }
+            ],
+            "DeviceSupport": {
+              "SupportsVolumePercentFeedback": true,
+              "SupportsMuteFeedback": true,
+              "SupportsDiscreteMute": true,
+              "SupportsMute": false,
+              "SupportsSetVolume": true,
+              "SupportsChangeVolume": true
+            },
+            "StandardCommands": {
+              "MuteOn": {
+                "Command": "^MZ @31,1$"
+              },
+              "MuteOff": {
+                "Command": "^MZ @31,0$"
+              },
+              "MutePoll": {
+                "Command": "^VMZ @31?$"
+              },
+              "Vol": {
+                "Command": "^VPZ @31,{value}$"
+              },
+              "VolumePoll": {
+                "Command": "^VPZ @31?$"
+              }
+            },
+            "Feedback": {
+              "Header": "^",
+              "ApiDelimiter": "$",
+              "MuteFeedback": {
+                "Feedback": {
+                  "On": "1",
+                  "Off": "0"
+                },
+                "GroupHeader": "^=MZ @031,"
+              },
+              "VolumeFeedback": {
+                "GroupHeader": "^=VPZ @031,"
+              }
+            }
+          },
+          {
+            "Id": "output32",
+            "ApiIdentifier": "32",
+            "Name": "Output 32",
+            "Manufacturer": "Zektor",
+            "Model": null,
+            "Type": "DirectOutput",
+            "AudioOutputDetails": [
+              {
+                "type": "Input32",
+                "description": "Output 32",
+                "connector": "Analog",
+                "friendlyName": "Output 32"
+              }
+            ],
+            "DeviceSupport": {
+              "SupportsVolumePercentFeedback": true,
+              "SupportsMuteFeedback": true,
+              "SupportsDiscreteMute": true,
+              "SupportsMute": false,
+              "SupportsSetVolume": true,
+              "SupportsChangeVolume": true
+            },
+            "StandardCommands": {
+              "MuteOn": {
+                "Command": "^MZ @32,1$"
+              },
+              "MuteOff": {
+                "Command": "^MZ @32,0$"
+              },
+              "MutePoll": {
+                "Command": "^VMZ @32?$"
+              },
+              "Vol": {
+                "Command": "^VPZ @32,{value}$"
+              },
+              "VolumePoll": {
+                "Command": "^VPZ @32?$"
+              }
+            },
+            "Feedback": {
+              "Header": "^",
+              "ApiDelimiter": "$",
+              "MuteFeedback": {
+                "Feedback": {
+                  "On": "1",
+                  "Off": "0"
+                },
+                "GroupHeader": "^=MZ @032,"
+              },
+              "VolumeFeedback": {
+                "GroupHeader": "^=VPZ @032,"
               }
             }
           }
