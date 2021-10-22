@@ -19,7 +19,7 @@
       "SupportsDiscreteMute": true,
       "SupportsMute": false,
       "SupportsSetVolume": true,
-      "SupportsChangeVolume": true,
+      "SupportsChangeVolume": false,
       "SupportsPowerFeedback": false,
       "SupportsDiscretePower": false,
       "SupportsTogglePower": false,
@@ -130,8 +130,8 @@
               }
             },
             "Feedback": {
-              "Header": "^",
-              "ApiDelimiter": "$",
+              "Header": "",
+              "ApiDelimiter": "",
               "MuteFeedback": {
                 "Feedback": {
                   "On": "1",
@@ -185,8 +185,8 @@
               }
             },
             "Feedback": {
-              "Header": "^",
-              "ApiDelimiter": "$",
+              "Header": "",
+              "ApiDelimiter": "",
               "MuteFeedback": {
                 "Feedback": {
                   "On": "1",
@@ -240,8 +240,8 @@
               }
             },
             "Feedback": {
-              "Header": "^",
-              "ApiDelimiter": "$",
+              "Header": "",
+              "ApiDelimiter": "",
               "MuteFeedback": {
                 "Feedback": {
                   "On": "1",
@@ -295,8 +295,8 @@
               }
             },
             "Feedback": {
-              "Header": "^",
-              "ApiDelimiter": "$",
+              "Header": "",
+              "ApiDelimiter": "",
               "MuteFeedback": {
                 "Feedback": {
                   "On": "1",
