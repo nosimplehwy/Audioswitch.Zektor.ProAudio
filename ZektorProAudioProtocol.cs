@@ -611,30 +611,41 @@ namespace AudioSwitchZektorProAudio
             return base.ResponseValidator(response, commandGroup);
         }
 
-        //protected override void DeConstructSwitcherRoute(string response)
-        //{
-        //    // Receiving: ROUTED=OUTPUT#1:INPUT#1
-        //    //            ROUTED=<output ID>:<input ID>
-        //    //            ROUTED= is stripped out of response before this is called. 
+        protected override void DeConstructSwitcherRoute(string response)
+        {
+            // Receiving: ^=SZ @001,001$
 
-        //    var routePath = response.Split(':');
-        //    AudioVideoExtender inputExtender = null;
-        //    AudioVideoExtender outputExtender = null;
+            var routePath = response.Split(',');
+            AudioVideoExtender inputExtender = null;
+            AudioVideoExtender outputExtender = null;
 
-        //    // We can get the extender objects here using the API identifier set
-        //    // in the embedded file.
-        //    // We can also get the extender objects by their unique ID using GetExtenderById
-        //    outputExtender = GetExtenderByApiIdentifier(routePath[0]);
-        //    inputExtender = routePath.Length > 1 ? GetExtenderByApiIdentifier(routePath[1]) : null;
 
-        //    // Figured out which input is routed to the specified output
-        //    // Now update the output extender with the current source routed to it
-        //    // The framework will figure out if this was a real change or not if it is not done here.
-        //    if (outputExtender != null)
-        //    {
-        //        outputExtender.VideoSourceExtenderId = inputExtender == null ?
-        //            null : inputExtender.Id;
-        //    }
-        //}
+            // We can get the extender objects here using the API identifier set
+            // in the embedded file.
+            // We can also get the extender objects by their unique ID using GetExtenderById
+            try
+            {
+                var output = Int32.Parse(routePath[0]);
+                var input = Int32.Parse(routePath[1]);
+                outputExtender = GetExtenderByApiIdentifier(output.ToString());
+                inputExtender = routePath.Length > 1 ? GetExtenderByApiIdentifier(input.ToString()) : null;
+                DriverLog.Log(EnableLogging, Log, LoggingLevel.Debug, "DeConstructSwitcherRoute", String.Format($"Input {input} is routed to Output {output}"));
+
+            }
+            catch (Exception exception)
+            {
+                DriverLog.Log(EnableLogging, Log, LoggingLevel.Error, "DeConstructSwitcherRoute", "Error parsing route.");
+            }
+
+            // Figured out which input is routed to the specified output
+            // Now update the output extender with the current source routed to it
+            // The framework will figure out if this was a real change or not if it is not done here.
+            if (outputExtender != null)
+            {
+                outputExtender.VideoSourceExtenderId = inputExtender == null ?
+                    null : inputExtender.Id;
+            }
+
+        }
     }
 }

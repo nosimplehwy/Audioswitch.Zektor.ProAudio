@@ -73,6 +73,11 @@
           "Command": "^SZ @{output},{input}$"
         }
       },
+      "Feedback": {
+        "RoutedExtenderFeedback": {
+          "GroupHeader": "^=SZ @"
+        }
+      },
       "PowerWaitPeriod": {
         "UseLocalWarmupTimer": false,
         "WarmUpTime": 3,
@@ -110,7 +115,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -165,7 +170,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -220,7 +225,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -275,7 +280,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -330,7 +335,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -385,7 +390,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -440,7 +445,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -495,7 +500,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -550,7 +555,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -605,7 +610,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -660,7 +665,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -715,7 +720,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -770,7 +775,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -825,7 +830,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -880,7 +885,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -935,7 +940,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -990,7 +995,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -1045,7 +1050,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -1100,7 +1105,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -1155,7 +1160,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -1210,7 +1215,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -1265,7 +1270,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -1320,7 +1325,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -1375,7 +1380,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -1430,7 +1435,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -1485,7 +1490,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -1540,7 +1545,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -1595,7 +1600,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -1650,7 +1655,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -1705,7 +1710,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -1760,7 +1765,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
@@ -1815,7 +1820,7 @@
               "SupportsDiscreteMute": true,
               "SupportsMute": false,
               "SupportsSetVolume": true,
-              "SupportsChangeVolume": true
+              "SupportsChangeVolume": false
             },
             "StandardCommands": {
               "MuteOn": {
