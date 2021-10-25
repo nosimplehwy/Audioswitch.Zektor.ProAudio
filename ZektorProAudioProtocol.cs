@@ -111,7 +111,7 @@ namespace AudioSwitchZektorProAudio
 
         private void VolumeLevel_PercentChanged(object sender, Crestron.RAD.Ext.Util.Scaling.LevelChangedEventArgs<uint> e)
         {
-            DriverLog.Log(EnableLogging, Log, LoggingLevel.Debug, "Volume1PercentChanged", String.Format($"{e}"));
+            DriverLog.Log(EnableLogging, Log, LoggingLevel.Debug, "VolumePercentChanged", String.Format($"{e}"));
         }
 
         private bool ZoneIsMuted(string zone)
@@ -626,15 +626,15 @@ namespace AudioSwitchZektorProAudio
             try
             {
                 var output = Int32.Parse(routePath[0]);
-                var input = Int32.Parse(routePath[1]);
+                var input = routePath[1].Substring(0, routePath[1].Length - 1);
                 outputExtender = GetExtenderByApiIdentifier(output.ToString());
-                inputExtender = routePath.Length > 1 ? GetExtenderByApiIdentifier(input.ToString()) : null;
+                inputExtender = routePath.Length > 1 ? GetExtenderByApiIdentifier(input) : null;
                 DriverLog.Log(EnableLogging, Log, LoggingLevel.Debug, "DeConstructSwitcherRoute", String.Format($"Input {input} is routed to Output {output}"));
 
             }
             catch (Exception exception)
             {
-                DriverLog.Log(EnableLogging, Log, LoggingLevel.Error, "DeConstructSwitcherRoute", "Error parsing route.");
+                DriverLog.Log(EnableLogging, Log, LoggingLevel.Error, "DeConstructSwitcherRoute", exception.ToString());
             }
 
             // Figured out which input is routed to the specified output
@@ -646,6 +646,16 @@ namespace AudioSwitchZektorProAudio
                     null : inputExtender.Id;
             }
 
+        }
+
+        protected override void Poll()
+        {
+            //poll extender routes
+            //for (int output = 1; output <= 32; output++)
+            //{
+            //    if(GetExtenderByApiIdentifier(output.ToString()) != null ? 
+            //}
+            base.Poll();
         }
     }
 }

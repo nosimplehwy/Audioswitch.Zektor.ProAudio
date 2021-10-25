@@ -52,7 +52,7 @@
         "DataBits": 0,
         "StopBits": -1,
         "Port": 50005,
-        "EnableAutoPolling": false,
+        "EnableAutoPolling": true,
         "EnableAutoReconnect": true,
         "TimeBetweenCommands": 250,
         "TimeBetweenCommandsOverride": 100,
@@ -1857,7 +1857,7 @@
         ],
         "RoutableInputs": [
           {
-            "ApiIdentifier": "1",
+            "ApiIdentifier": "001",
             "Id": "input1",
             "Name": "Input 1",
             "Manufacturer": "Zektor",
@@ -1873,7 +1873,7 @@
             ]
           },
           {
-            "ApiIdentifier": "2",
+            "ApiIdentifier": "002",
             "Id": "input2",
             "Name": "Input 2",
             "Manufacturer": "Zektor",
@@ -1889,7 +1889,7 @@
             ]
           },
           {
-            "ApiIdentifier": "3",
+            "ApiIdentifier": "003",
             "Id": "input3",
             "Name": "Input 3",
             "Manufacturer": "Zektor",
@@ -1905,7 +1905,7 @@
             ]
           },
           {
-            "ApiIdentifier": "4",
+            "ApiIdentifier": "004",
             "Id": "input4",
             "Name": "Input 4",
             "Manufacturer": "Zektor",
@@ -1921,7 +1921,7 @@
             ]
           },
           {
-            "ApiIdentifier": "5",
+            "ApiIdentifier": "005",
             "Id": "input5",
             "Name": "Input 5",
             "Manufacturer": "Zektor",
@@ -1937,7 +1937,7 @@
             ]
           },
           {
-            "ApiIdentifier": "6",
+            "ApiIdentifier": "006",
             "Id": "input6",
             "Name": "Input 6",
             "Manufacturer": "Zektor",
@@ -1953,7 +1953,7 @@
             ]
           },
           {
-            "ApiIdentifier": "7",
+            "ApiIdentifier": "007",
             "Id": "input7",
             "Name": "Input 7",
             "Manufacturer": "Zektor",
@@ -1969,7 +1969,7 @@
             ]
           },
           {
-            "ApiIdentifier": "8",
+            "ApiIdentifier": "008",
             "Id": "input8",
             "Name": "Input 8",
             "Manufacturer": "Zektor",
@@ -1985,7 +1985,7 @@
             ]
           },
           {
-            "ApiIdentifier": "9",
+            "ApiIdentifier": "009",
             "Id": "input9",
             "Name": "Input 9",
             "Manufacturer": "Zektor",
@@ -2001,7 +2001,7 @@
             ]
           },
           {
-            "ApiIdentifier": "10",
+            "ApiIdentifier": "010",
             "Id": "input10",
             "Name": "Input 10",
             "Manufacturer": "Zektor",
@@ -2017,7 +2017,7 @@
             ]
           },
           {
-            "ApiIdentifier": "11",
+            "ApiIdentifier": "011",
             "Id": "input11",
             "Name": "Input 11",
             "Manufacturer": "Zektor",
@@ -2033,7 +2033,7 @@
             ]
           },
           {
-            "ApiIdentifier": "12",
+            "ApiIdentifier": "012",
             "Id": "input12",
             "Name": "Input 12",
             "Manufacturer": "Zektor",
@@ -2049,7 +2049,7 @@
             ]
           },
           {
-            "ApiIdentifier": "13",
+            "ApiIdentifier": "013",
             "Id": "input13",
             "Name": "Input 13",
             "Manufacturer": "Zektor",
@@ -2065,7 +2065,7 @@
             ]
           },
           {
-            "ApiIdentifier": "14",
+            "ApiIdentifier": "014",
             "Id": "input14",
             "Name": "Input 14",
             "Manufacturer": "Zektor",
@@ -2081,7 +2081,7 @@
             ]
           },
           {
-            "ApiIdentifier": "15",
+            "ApiIdentifier": "015",
             "Id": "input15",
             "Name": "Input 15",
             "Manufacturer": "Zektor",
@@ -2097,7 +2097,7 @@
             ]
           },
           {
-            "ApiIdentifier": "16",
+            "ApiIdentifier": "016",
             "Id": "input16",
             "Name": "Input 16",
             "Manufacturer": "Zektor",
@@ -2109,6 +2109,22 @@
                 "description": "Input 16 Audio Input",
                 "connector": "Analog",
                 "friendlyName": "Input 16"
+              }
+            ]
+          },
+          {
+            "ApiIdentifier": "017",
+            "Id": "input17",
+            "Name": "Input 17",
+            "Manufacturer": "Zektor",
+            "Model": null,
+            "Type": "DirectInput",
+            "AudioInputDetails": [
+              {
+                "type": "Input17",
+                "description": "Input 17 Audio Input",
+                "connector": "Analog",
+                "friendlyName": "Input 17"
               }
             ]
           }
