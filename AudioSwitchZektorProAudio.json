@@ -52,7 +52,7 @@
         "DataBits": 0,
         "StopBits": -1,
         "Port": 50005,
-        "EnableAutoPolling": true,
+        "EnableAutoPolling": false,
         "EnableAutoReconnect": true,
         "TimeBetweenCommands": 250,
         "TimeBetweenCommandsOverride": 100,
