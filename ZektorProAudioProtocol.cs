@@ -78,6 +78,12 @@ namespace AudioSwitchZektorProAudio
             {
                _controllers[controller.Key].VolumeLevel.PercentChanged  += VolumeLevel_PercentChanged;
             }
+
+        }
+
+        private void ZektorProAudioProtocol_RoutableOutputsChanged(object sender, Crestron.RAD.Common.Events.ListChangedEventArgs<IAudioVideoExtender> e)
+        {
+            throw new NotImplementedException();
         }
 
         public override void Dispose()
@@ -100,13 +106,11 @@ namespace AudioSwitchZektorProAudio
             base.Dispose();
         }
 
-
         public override void ExtenderSetVolume(AudioVideoExtender extender, uint volume)
         {
             //base.ExtenderSetVolume(extender, volume);
             DriverLog.Log(EnableLogging, Log, LoggingLevel.Debug, "ExtenderSetVolume", String.Format($"{extender.ApiIdentifier}, vol {volume}"));
             VolumeControllerForCommand(extender.ApiIdentifier).VolumeLevel.Percent = volume;
-
         }
 
         private void VolumeLevel_PercentChanged(object sender, Crestron.RAD.Ext.Util.Scaling.LevelChangedEventArgs<uint> e)
@@ -114,10 +118,7 @@ namespace AudioSwitchZektorProAudio
             DriverLog.Log(EnableLogging, Log, LoggingLevel.Debug, "VolumePercentChanged", String.Format($"{e}"));
         }
 
-        private bool ZoneIsMuted(string zone)
-        {
-            return false;
-        }
+
         #region ChangeVolumeHelpers
         private void ChangeZone1Volume(double volume)
         {
@@ -407,7 +408,6 @@ namespace AudioSwitchZektorProAudio
             SendCommand(command);
         }
 
-
         private SoundUnitedMuteVolController MuteVolControllerForCommand(string zone)
         {
             DriverLog.Log(EnableLogging, Log, LoggingLevel.Debug, "MuteVolControllerForCommand", "");
@@ -490,7 +490,6 @@ namespace AudioSwitchZektorProAudio
         // ready to receive them
         protected override bool CanSendCommand(CommandSet commandSet)
         {
-            string unused;
             bool canSend;
             DriverLog.Log(EnableLogging, Log, LoggingLevel.Debug, "CanSendCommand", "");
 
@@ -526,23 +525,11 @@ namespace AudioSwitchZektorProAudio
             return canSend;
         }
 
-        // Override this because the default implementation does not check if
-        // a power-on command exists in the queue for the main zone, so the
-        // default implementation will drop input-switch commands if the main
-        // zone power-on command is queued since another zone was sent first
-        // Also note that since we don't know which power-on command is in the
-        // queue, we could potentally allow queueing an input command for the
-        // main zone because an alternate zone's power on command is in the
-        // queue. The only workaround would be a shadow copy of the "power on
-        // command is in the queue" information which is just not worth it to
-        // attempt to keep track of.
         protected override bool CanQueueCommand(CommandSet commandSet, bool powerOnCommandExistsInQueue)
         {
             DriverLog.Log(EnableLogging, Log, LoggingLevel.Debug, "CanQueueCommand", "");
-            string unused;
+        
             return base.CanQueueCommand(commandSet, powerOnCommandExistsInQueue);
-
-
         }
 
         protected override void DeConstructExtenderMute(AudioVideoExtender extender, string response)
@@ -567,16 +554,14 @@ namespace AudioSwitchZektorProAudio
             if (rx.Contains(ApiDelimiter))
             {
                 _responseBuffer.Append(rx);
-                var splitResponses = _responseBuffer.ToString().Split('$');
+                var splitResponses = _responseBuffer.ToString().Split(new string[]{"$\r"},StringSplitOptions.None);
                 _responseBuffer.Length = 0;
 
                 for (int i = 0; i < splitResponses.Length; i++)
                 {
-                    if (splitResponses[i].Contains("\r"))
-                        splitResponses[i] = splitResponses[i].Substring(1);
-                    base.DataHandler(splitResponses[i]);
+                    if(splitResponses[i].Contains("^="))
+                     base.DataHandler(splitResponses[i]);
                 }
-                    
             }
             else
             {
@@ -585,7 +570,6 @@ namespace AudioSwitchZektorProAudio
 
 
         }
-
 
         protected override void ChooseDeconstructMethod(ValidatedRxData validatedData)
         {
@@ -597,16 +581,7 @@ namespace AudioSwitchZektorProAudio
         {
             DriverLog.Log(EnableLogging, Log, LoggingLevel.Debug, "ResponseValidator", String.Format($"Response Received: {response}"));
             response = response.Trim();
-            //if (response.Trim().StartsWith("^=VPZ @"))
-            //{
-            //    ValidatedRxData validatedData = new ValidatedRxData(false, string.Empty);
-            //    DriverLog.Log(EnableLogging, Log, LoggingLevel.Debug, "ResponseValidator", String.Format($"Response is Volume Level"));
-            //    validatedData.Data = response.Trim();
-            //    validatedData.CommandGroup = CommonCommandGroupType.Volume;
-            //    validatedData.Ready = true;
-            //    return validatedData;
-            //}
-
+        
             //Return with base call
             return base.ResponseValidator(response, commandGroup);
         }
@@ -642,11 +617,33 @@ namespace AudioSwitchZektorProAudio
             // The framework will figure out if this was a real change or not if it is not done here.
             if (outputExtender != null)
             {
-                outputExtender.VideoSourceExtenderId = inputExtender == null ?
-                    null : inputExtender.Id;
+                outputExtender.AudioSourceExtenderId = inputExtender?.Id;
             }
 
         }
+
+        private void PollExtenderRoute(string zone)
+        {
+            DriverLog.Log(EnableLogging, Log, LoggingLevel.Debug, "PollExtenderRoute", String.Format($"zone {zone}"));
+
+            var command = new CommandSet(
+                String.Format($"Poll zone {zone} route"),
+                string.Format($"^SZ @{zone},?$"),
+                CommonCommandGroupType.AudioVideoExtender,
+                null,
+                false,
+                CommandPriority.Normal,
+                StandardCommandsEnum.AudioInputPoll)
+            {
+                AllowIsQueueableOverride = true,
+                AllowIsSendableOverride = true,
+                AllowRemoveCommandOverride = true
+            };
+
+
+            SendCommand(command);
+        }
+
 
         protected override void Poll()
         {
