@@ -69,6 +69,9 @@
         "DeviceId": 0
       },
       "StandardCommands": {
+        "AudioVideoSwitcherRoutePoll": {
+          "Command": "^SZ @1:32,?$"
+        },
         "AudioVideoSwitcherRoute": {
           "Command": "^SZ @{output},{input}$"
         }

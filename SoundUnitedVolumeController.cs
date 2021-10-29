@@ -36,7 +36,7 @@ namespace AudioSwitchZektorProAudio
         
         public SoundUnitedVolumeController(Func<bool> getMuteState, ScalingLevelTranslator.LevelChangeDelegate changeVolume, double volumeStepSize, long timeBetweenCommands)
         {
-            _defaultVolumeScale = new Scale(0, 98, volumeStepSize);
+            _defaultVolumeScale = new Scale(0, 100, volumeStepSize);
                 
             MuteVol = new SoundUnitedMuteVolController(getMuteState);
             VolumeLevel = new PercentUshortLevelTranslator(changeVolume, _defaultVolumeScale);

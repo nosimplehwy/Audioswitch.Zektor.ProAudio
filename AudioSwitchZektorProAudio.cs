@@ -19,7 +19,6 @@ namespace AudioSwitchZektorProAudio
     {
         public AudioSwitchZektorProAudio()
         {
-            
         }
 
         #region ITcp Members

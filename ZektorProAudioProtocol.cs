@@ -21,7 +21,6 @@ namespace AudioSwitchZektorProAudio
     {
         private const string ApiDelimiter = "$";
         private const double VolumeStep = 1.0;
-        private const string _delimiterPattern = "($)";
 
         private Dictionary<string,SoundUnitedVolumeController> _controllers;
         private StringBuilder _responseBuffer = new StringBuilder();
@@ -79,11 +78,18 @@ namespace AudioSwitchZektorProAudio
                _controllers[controller.Key].VolumeLevel.PercentChanged  += VolumeLevel_PercentChanged;
             }
 
+            
         }
 
-        private void ZektorProAudioProtocol_RoutableOutputsChanged(object sender, Crestron.RAD.Common.Events.ListChangedEventArgs<IAudioVideoExtender> e)
+        protected override void ConnectionChanged(bool connection)
         {
-            throw new NotImplementedException();
+            base.ConnectionChanged(connection);
+
+            if (!IsConnected)
+                return;
+
+            PollExtenderVolume();
+            ClearExtenderRoutes();
         }
 
         public override void Dispose()
@@ -427,64 +433,70 @@ namespace AudioSwitchZektorProAudio
             return controller;
         }
 
-        protected override bool PrepareStringThenSend(CommandSet commandSet)
-        {
-            DriverLog.Log(EnableLogging, Log, LoggingLevel.Debug, "PrepareStringThenSend", "");
-            if (!commandSet.CommandPrepared)
-            {
-                DriverLog.Log(EnableLogging, Log, LoggingLevel.Debug, "PrepareStringThenSend", String.Format($"Switch {commandSet.StandardCommand.ToString()}"));
-                // Attach callback functions to certain commands
-                switch (commandSet.StandardCommand)
-                {
+        //protected override bool PrepareStringThenSend(CommandSet commandSet)
+        //{
+        //    DriverLog.Log(EnableLogging, Log, LoggingLevel.Debug, "PrepareStringThenSend", "");
+        //    if (!commandSet.CommandPrepared)
+        //    {
+        //        DriverLog.Log(EnableLogging, Log, LoggingLevel.Debug, "PrepareStringThenSend", String.Format($"Switch {commandSet.StandardCommand.ToString()}"));
+        //        // Attach callback functions to certain commands
+        //        switch (commandSet.StandardCommand)
+        //        {
 
-                    // Track when the last mute command was sent.
-                    case StandardCommandsEnum.Mute:
-                    case StandardCommandsEnum.MuteOff:
-                    case StandardCommandsEnum.MuteOn:
-                        {
-                            // At the time of writing, the framework does not use this callback, but we
-                            // use the chained calls anyway in case the framework later is updated
-                            // to need the callback, too.
-                            //Action callback = MuteVolControllerForCommand(commandSet.CommandGroup).MuteCommandChanged;
-                            //commandSet.CallBack = ActionSequence.Chain(callback, commandSet.CallBack);
-                        }
-                        break;
+        //            // Track when the last mute command was sent.
+        //            case StandardCommandsEnum.Mute:
+        //            case StandardCommandsEnum.MuteOff:
+        //            case StandardCommandsEnum.MuteOn:
+        //                {
+        //                    // At the time of writing, the framework does not use this callback, but we
+        //                    // use the chained calls anyway in case the framework later is updated
+        //                    // to need the callback, too.
+        //                    //Action callback = MuteVolControllerForCommand(commandSet.CommandGroup).MuteCommandChanged;
+        //                    //commandSet.CallBack = ActionSequence.Chain(callback, commandSet.CallBack);
+        //                }
+        //                break;
 
-                    // Track volume commands because if mute is on while they
-                    // are sent, the device will unmute and may miss a second
-                    // volume command immediately after it during the unmuting process
-                    case StandardCommandsEnum.Vol:
-                    case StandardCommandsEnum.VolPlus:
-                    case StandardCommandsEnum.VolMinus:
-                        {
-                            // At the time of writing, the framework does not use this callback, but we
-                            // use the chained calls anyway in case the framework later is updated
-                            // to need the callback, too.
-                           // Action callback = MuteVolControllerForCommand(commandSet.CommandGroup).VolCommandSent;
-                           // commandSet.CallBack = ActionSequence.Chain(callback, commandSet.CallBack);
-                        }
-                        break;
+        //            // Track volume commands because if mute is on while they
+        //            // are sent, the device will unmute and may miss a second
+        //            // volume command immediately after it during the unmuting process
+        //            case StandardCommandsEnum.Vol:
+        //            case StandardCommandsEnum.VolPlus:
+        //            case StandardCommandsEnum.VolMinus:
+        //                {
+        //                    // At the time of writing, the framework does not use this callback, but we
+        //                    // use the chained calls anyway in case the framework later is updated
+        //                    // to need the callback, too.
+        //                   // Action callback = MuteVolControllerForCommand(commandSet.CommandGroup).VolCommandSent;
+        //                   // commandSet.CallBack = ActionSequence.Chain(callback, commandSet.CallBack);
+        //                }
+        //                break;
 
-                    // Also need to know when PowerOn commands are sent to
-                    // appropriately space out power-on commands for zones
-                    case StandardCommandsEnum.PowerOn:
-                        {
-                            // First use our PowerOnCommandCallback, then call the
-                            // default callback from the framework to complete warmup
-                            //commandSet.CallBack = ActionSequence.Chain(PowerOnCommandCallback, commandSet.CallBack);
-                        }
-                        break;
+        //            // Also need to know when PowerOn commands are sent to
+        //            // appropriately space out power-on commands for zones
+        //            case StandardCommandsEnum.PowerOn:
+        //                {
+        //                    // First use our PowerOnCommandCallback, then call the
+        //                    // default callback from the framework to complete warmup
+        //                    //commandSet.CallBack = ActionSequence.Chain(PowerOnCommandCallback, commandSet.CallBack);
+        //                }
+        //                break;
 
-                    default:
-                        break;
-                }
+        //            default:
+        //                break;
+        //        }
 
-                commandSet.Command = commandSet.Command;
-                commandSet.CommandPrepared = true;
-            }
+        //        commandSet.Command = commandSet.Command;
+        //        commandSet.CommandPrepared = true;
+        //    }
 
-            return base.PrepareStringThenSend(commandSet);
-        }
+        //    return base.PrepareStringThenSend(commandSet);
+        //}
+
+        //protected override bool Send(CommandSet commandSet)
+        //{
+        //    DriverLog.Log(EnableLogging, Log, LoggingLevel.Debug, "Send", String.Format($"Switch {commandSet.Command}"));
+        //    return base.Send(commandSet);
+        //}
 
         // Override this to delay sending certain commands until the device is
         // ready to receive them
@@ -550,17 +562,16 @@ namespace AudioSwitchZektorProAudio
             DriverLog.Log(EnableLogging, Log, LoggingLevel.Debug, "DataHandler", rx);
 
             // Split all received messages so that ResponseValidator gets one response at a time
-            // Handle case where response doesn't end in delimiter but contains it
             if (rx.Contains(ApiDelimiter))
             {
                 _responseBuffer.Append(rx);
                 var splitResponses = _responseBuffer.ToString().Split(new string[]{"$\r"},StringSplitOptions.None);
                 _responseBuffer.Length = 0;
 
-                for (int i = 0; i < splitResponses.Length; i++)
+                foreach (var response in splitResponses)
                 {
-                    if(splitResponses[i].Contains("^="))
-                     base.DataHandler(splitResponses[i]);
+                    if(response.Contains("^="))
+                        base.DataHandler(response.Trim());
                 }
             }
             else
@@ -580,79 +591,95 @@ namespace AudioSwitchZektorProAudio
         protected override ValidatedRxData ResponseValidator(string response, CommonCommandGroupType commandGroup)
         {
             DriverLog.Log(EnableLogging, Log, LoggingLevel.Debug, "ResponseValidator", String.Format($"Response Received: {response}"));
-            response = response.Trim();
-        
+
             //Return with base call
             return base.ResponseValidator(response, commandGroup);
         }
 
-        protected override void DeConstructSwitcherRoute(string response)
+        //protected override void DeConstructSwitcherRoute(string response)
+        //{
+        //    // Receiving: ^=SZ @001,001
+
+        //    var routePath = response.Split(',');
+        //    AudioVideoExtender inputExtender = null;
+        //    AudioVideoExtender outputExtender = null;
+
+
+        //    //determine which input is routed to which output
+        //    try
+        //    {
+        //        var output = int.Parse(routePath[0]);
+        //        var input = routePath[1];
+        //        outputExtender = GetExtenderByApiIdentifier(output.ToString());
+        //        //if input is 0 then extender is null
+        //        if (input != "000")
+        //            inputExtender = GetExtenderByApiIdentifier(input);
+        //    }
+        //    catch (Exception exception)
+        //    {
+        //        DriverLog.Log(EnableLogging, Log, LoggingLevel.Error, "DeConstructSwitcherRoute", exception.ToString());
+        //    }
+
+        //    if (outputExtender == null) return;
+
+        //    //determine is routing is correct, if it is not, then send command to correct it
+        //    if (outputExtender.AudioSourceExtenderId == inputExtender?.Id) return;
+        //    DriverLog.Log(EnableLogging, Log, LoggingLevel.Debug, "DeConstructSwitcherRoute", string.Format($"Changing input to match currently routed source: {inputExtender?.Id} : {outputExtender.AudioSourceExtenderId} : {outputExtender.Id}"));
+        //    RouteAudioInput(outputExtender.AudioSourceExtenderId, outputExtender.Id);
+        //}
+
+
+        private void PollExtenderRoute()
         {
-            // Receiving: ^=SZ @001,001$
+            DriverLog.Log(EnableLogging, Log, LoggingLevel.Debug, "PollExtenderRoutes", "");
 
-            var routePath = response.Split(',');
-            AudioVideoExtender inputExtender = null;
-            AudioVideoExtender outputExtender = null;
+            var command = new CommandSet(
+                    String.Format($"Poll zone routes"),
+                    string.Format($"^SZ @1:32,?$"),
+                    CommonCommandGroupType.AudioVideoExtender,
+                    null,
+                    true,
+                    CommandPriority.Normal,
+                    StandardCommandsEnum.AudioVideoExtenderRoute);
 
-
-            // We can get the extender objects here using the API identifier set
-            // in the embedded file.
-            // We can also get the extender objects by their unique ID using GetExtenderById
-            try
-            {
-                var output = Int32.Parse(routePath[0]);
-                var input = routePath[1].Substring(0, routePath[1].Length - 1);
-                outputExtender = GetExtenderByApiIdentifier(output.ToString());
-                inputExtender = routePath.Length > 1 ? GetExtenderByApiIdentifier(input) : null;
-                DriverLog.Log(EnableLogging, Log, LoggingLevel.Debug, "DeConstructSwitcherRoute", String.Format($"Input {input} is routed to Output {output}"));
-
-            }
-            catch (Exception exception)
-            {
-                DriverLog.Log(EnableLogging, Log, LoggingLevel.Error, "DeConstructSwitcherRoute", exception.ToString());
-            }
-
-            // Figured out which input is routed to the specified output
-            // Now update the output extender with the current source routed to it
-            // The framework will figure out if this was a real change or not if it is not done here.
-            if (outputExtender != null)
-            {
-                outputExtender.AudioSourceExtenderId = inputExtender?.Id;
-            }
+            SendCommand(command);
 
         }
 
-        private void PollExtenderRoute(string zone)
+        private void ClearExtenderRoutes()
         {
-            DriverLog.Log(EnableLogging, Log, LoggingLevel.Debug, "PollExtenderRoute", String.Format($"zone {zone}"));
+            DriverLog.Log(EnableLogging, Log, LoggingLevel.Debug, "ClearExtenderRoutes", "");
 
             var command = new CommandSet(
-                String.Format($"Poll zone {zone} route"),
-                string.Format($"^SZ @{zone},?$"),
+                String.Format($"Clear zone routes"),
+                string.Format($"^SZ @1:32,0$"),
                 CommonCommandGroupType.AudioVideoExtender,
                 null,
-                false,
+                true,
                 CommandPriority.Normal,
-                StandardCommandsEnum.AudioInputPoll)
-            {
-                AllowIsQueueableOverride = true,
-                AllowIsSendableOverride = true,
-                AllowRemoveCommandOverride = true
-            };
+                StandardCommandsEnum.AudioVideoExtenderRoute);
 
+            SendCommand(command);
+
+        }
+
+        private void PollExtenderVolume()
+        {
+            DriverLog.Log(EnableLogging, Log, LoggingLevel.Debug, "PollVolume", string.Format($"zone"));
+
+            var command = new CommandSet(
+                string.Format($"Poll zone volume"),
+                string.Format($"^VPZ @1:32,?$"),
+                CommonCommandGroupType.AudioVideoExtender,
+                null,
+                true,
+                CommandPriority.High,
+                StandardCommandsEnum.Vol);
 
             SendCommand(command);
         }
 
+       
 
-        protected override void Poll()
-        {
-            //poll extender routes
-            //for (int output = 1; output <= 32; output++)
-            //{
-            //    if(GetExtenderByApiIdentifier(output.ToString()) != null ? 
-            //}
-            base.Poll();
-        }
     }
 }
